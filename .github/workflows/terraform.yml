@@ -20,11 +20,10 @@ on:
         default: false
 env:
   TF_DIR: 'src'
+  TF_VAR_org_id: '${{ secrets.TF_VAR_org_id }}'
 jobs:
   Terraforming:
     runs-on: ubuntu-latest
-    env:
-      TF_VAR_org_id: '${{ secrets.TF_VAR_org_id }}'
     steps:
     - name: Check out repository code
       uses: actions/checkout@v4
